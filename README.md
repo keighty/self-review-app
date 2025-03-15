@@ -27,7 +27,24 @@ A simple web application to help engineers and engineering managers generate the
    ```
 
 ### Configuration
-- Provide your GitHub API key in the environment settings (e.g., `.env` or command line).
+#### Creating a GitHub Personal Access Token (PAT)
+To fetch data from GitHub, you need a Personal Access Token (PAT) with access to specific repositories. Follow these steps to generate one:
+
+1. Go to [GitHub Developer Settings](https://github.com/settings/tokens).
+2. Click **Generate new token (classic)**.
+3. Provide a **note** (e.g., "Self-Review App Access").
+4. Set an expiration date if needed.
+5. Under **Select scopes**, only check:
+   - `repo:read` → To read private repository data (optional if you only need public repo access).
+6. Under **Repository access**, select "Only select repositories" and choose the ones you want to allow access to.
+7. Click **Generate token** and copy the generated token.
+8. Store the token securely, as you will not be able to see it again.
+
+#### Using the GitHub PAT
+- Provide your GitHub API key in the environment settings (e.g., `.env` or command line):
+  ```sh
+  export SELF_REVIEW_GITHUB_PAT=your_personal_access_token
+  ```
 
 ### Roadmap
 - Add onboarding flow
