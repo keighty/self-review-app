@@ -4,20 +4,21 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api_github from "./routes/api/github.ts";
+import * as $api_fetchFromGithub from "./routes/api/fetchFromGithub.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $APIKeyForm from "./islands/APIKeyForm.tsx";
 import * as $Counter from "./islands/Counter.tsx";
-import * as $SelfReview from "./islands/SelfReview.tsx";
+import * as $FetchPullRequests from "./islands/FetchPullRequests.tsx";
+import * as $SelfReviewSetup from "./islands/SelfReviewSetup.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api/github.ts": $api_github,
+    "./routes/api/fetchFromGithub.ts": $api_fetchFromGithub,
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
@@ -25,7 +26,8 @@ const manifest = {
   islands: {
     "./islands/APIKeyForm.tsx": $APIKeyForm,
     "./islands/Counter.tsx": $Counter,
-    "./islands/SelfReview.tsx": $SelfReview,
+    "./islands/FetchPullRequests.tsx": $FetchPullRequests,
+    "./islands/SelfReviewSetup.tsx": $SelfReviewSetup,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
