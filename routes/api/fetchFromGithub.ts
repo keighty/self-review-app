@@ -27,6 +27,7 @@ export async function fetchMergedPullRequests(startDate: string, endDate: string
           orderBy: { field: UPDATED_AT, direction: DESC }
         ) {
           nodes {
+            id
             title
             url
             mergedAt
